@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		
+	</head>
+
+	<body style="background-color:lightblue">
+	
+		<h1>Exercise Prime</h1>
+		
+		<h5>Enter a number </h5>
+		
+		<input type="text" id="number"><br>
+		<button class="btn btn-success">click</button>
+		<h4></h4>
+		
+		
+		<script>
+		$("document").ready(function() {
+	$(".btn-success").on("click", function() {
+		$.ajax({
+			type: "POST",
+			dataType: "json",
+			data: {
+				number: $("#number").val()
+			},
+			success: function(json) {
+				$("h4").html(json.message);
+			}
+		});
+	});
+});
+		</script>
+	</body>
+</html>
