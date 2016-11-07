@@ -10,7 +10,7 @@ describe("Testing if a number is prime or not", function() {
 	it("Should return '5 is prime' for an input of 5", function(done) {
 		chai.request(app)
 			.post("/")
-			.send({"number": "7"})
+			.send({"number": "5"})
 			.end(function(err, res) {
 				res.should.be.json;
 				res.body.should.be.a('object');
